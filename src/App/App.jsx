@@ -1,23 +1,19 @@
-import { useEffect, useState } from "react";
-import { getUserInfo } from "../services";
-import CardsList from "../components/CardsList/CardsList";
-import { Container } from "./App.styled";
+import { Route, Routes } from "react-router-dom";
+import Layout from "../components/Layout";
+import { lazy } from "react";
+
+const Home = lazy(() => import("../pages/Home/Home"));
+const Tweets = lazy(() => import("../pages/Tweets/Tweets"));
 
 const App = () => {
-  const [users, setUsers] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const response = await getUserInfo();
-      setUsers(response);
-    };
-    fetchUser();
-  }, []);
-
   return (
-    <Container>
-      <CardsList users={users} />
-    </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="tweets" element={<Tweets />} />
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
   );
 };
 

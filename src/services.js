@@ -10,3 +10,12 @@ export const getUserInfo = async () => {
     return Promise.reject(new Error(error));
   }
 };
+
+export const updateUser = async (userId, updatedUser) => {
+  try {
+    const response = await axios.put(`/users/${userId}`, updatedUser);
+    return response.data;
+  } catch (error) {
+    return Promise.reject(new Error(error));
+  }
+};

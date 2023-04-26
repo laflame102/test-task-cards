@@ -1,7 +1,11 @@
 import { Button } from "./ActiveBtn.styled";
 
-const ActiveBtn = () => {
-  return <Button type="button">Following</Button>;
+const ActiveBtn = ({ onClick }) => {
+  return (
+    <Button type="button" onClick={() => onClick()}>
+      Following
+    </Button>
+  );
 };
 
 export default ActiveBtn;

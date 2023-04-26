@@ -20,6 +20,6 @@ export const Button = styled.button`
   color: #373737;
 
   &:hover {
-    scale: 1.05;
+    scale: 1.02;
   }
 `;
