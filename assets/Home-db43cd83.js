@@ -1,4 +1,4 @@
-import{s as t,j as e}from"./index-0887f650.js";const s=t.h1`
+import{s as t,j as e}from"./index-34029cd2.js";const s=t.h1`
   display: flex;
   justify-content: center;
   font-size: 60px;
